@@ -1,0 +1,49 @@
+body {
+   
+    font-family: sans-serif;
+}
+
+.header {
+    background-color:beige;
+            color: white;
+            padding: 5px 10px;
+}
+
+.footer {
+    background-color: rgb(186, 222, 187);
+    padding: 6px;
+    clear: both;
+   
+}
+
+h1 {
+    color:aquamarine;
+    margin-left: 20px;
+  }
+
+  h2 {
+    color: navy;
+    margin-left: 20px;
+  }
+
+  h3 {
+    color:brown;
+    margin-left: 20px;
+  }
+
+  h4 {
+    color:black;
+    margin-left: 20px;
+  }
+
+  p{
+
+    color: navy;
+  text-indent: 30px;
+  text-transform: uppercase;
+  }
+
+  div {
+color:crimson
+
+  }
