@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="proj3_1.js"></script>
+
+    <style>
+        #customers {
+          font-family: Arial, Helvetica, sans-serif;
+          border-collapse: collapse;
+          width: 50%;
+        }
+        
+        #customers td, #customers th {
+          border: 1px solid #ddd;
+          padding: 8px;
+        }
+        
+        #customers tr:nth-child(even){background-color: #f2f2f2;}
+        
+        #customers tr:hover {background-color: #ddd;}
+        
+        #customers th {
+          padding-top: 12px;
+          padding-bottom: 12px;
+          text-align: left;
+          background-color:bisque;
+          color:black;
+        }
+        </style>
+</head>
+<body>
+
+
+
+<p>
+
+
+    
+    <script>
+    var empObj = sessionStorage.getItem("list")
+    var empJson = JSON.parse(empObj)
+
+    var sum=0;
+
+    document.write("<table border=1 id=customers > <tr> <th> ClientName </th>  <th>ProjectName</th>     <th> Budget</th> </tr>")
+empJson.forEach(element => {
+    
+document.write("<tr>");
+
+    document.write( "<td>"+ element.s1 +"</td>"+        "<td>"+"                  "+ element.s2+"</td>"+"             "+     "<td>"+element.s3  +"</td>");
+    console.log(element.s1);
+
+   
+    document.write("<br>");
+
+  sum=sum+ parseInt(element.s3);
+});
+
+document.write("</table>");
+ 
+document.write("<h2>")
+document.write( "Total Budget: "+ sum);
+
+document.write("</h2>")
+</script>
+</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<a href="main.html"> Back</a>
+
+
+
+</body>
+</html>
