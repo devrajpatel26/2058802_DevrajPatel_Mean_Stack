@@ -34,7 +34,37 @@ sessionStorage.setItem("list" , JSON.stringify(list));
 
 
 
+<script>
 
+    var tables=0;
+    var chairs=0;
+      var empObj = sessionStorage.getItem("list1")
+    var cart = JSON.parse(empObj)
+
+    console.log(cart);
+    cart.forEach(element => {
+      
+        if(element=="chair"){
+            chairs++;
+        }
+        if(element=="table"){
+            tables++;
+        }
+
+
+
+
+    });
+    
+   
+    document.write(chairs);
+
+    document.write(tables);
+
+
+
+
+</script>
 
 
 
