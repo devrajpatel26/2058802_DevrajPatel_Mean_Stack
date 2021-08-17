@@ -1,0 +1,4 @@
+function myC(){
+
+    alert("Loaded");
+}

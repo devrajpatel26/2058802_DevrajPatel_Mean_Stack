@@ -1,0 +1,87 @@
+
+
+
+
+
+
+
+
+<div *ngIf="isShown" class="row container-fluid"  id="div5" >
+
+  <div id="div4">
+  <h1> Login Page</h1>
+  <label for="new1" id="new3">User name:</label>
+  <input type="text" id="new1" name="l_uname"><br><br>
+
+  <label for="new4" id="new4">User name:</label>
+  <input type="text" id="new2" name="l_pwd"><br><br>
+
+  <button onclick="validate()" type="checkbox" >Login</button>
+
+</div>
+
+<div id="table" style="display: none;">
+
+  <h1>My portfolio</h1>
+
+  
+  <label for="con1" >Contact Name</label>
+  <input type="text" id="con1" name="con1"><br><br>
+
+  <label for="con2" >Phone No &nbsp;&nbsp;&nbsp;&nbsp;</label>
+  <input type="text" id="con2" name="con1"><br><br>
+
+
+  <button onclick=" addtotable()"> Save</button>
+
+
+  <br>
+  <br>
+  <br>
+  <h4 id="name"></h4>
+<h3>Contact information</h3>
+
+  <table id="contacts" >
+    <tr>
+      <th>Name</th> 
+      <th>Phone No</th>
+
+    </tr>
+    <tr>
+  </table>
+
+
+</div>
+
+
+</div>
+
+<div *ngIf="is1" class="row container-fluid"  id="div2" >
+  <h1>Registration Page</h1>
+  <label for="fname">First name:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+  
+  <label for="username1">User name:</label>
+
+  <input type="text" id="username" name="username"><br><br>
+
+
+  <label for="password1">Password:</label>
+
+  <input type="text" id="password" name="password"><br><br>
+
+
+  <button onclick="myFunction()">Register</button>
+<br>
+<br>
+
+  <button (click)="toggleShow()" type="checkbox" >Login</button>
+  
+
+  
+  </div>
+
+  
+  

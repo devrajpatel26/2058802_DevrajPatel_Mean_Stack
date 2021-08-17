@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DemoApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+</head>
+<body>
+
+ 
+  <style>
+    div.table{ display: none }
+
+
+    table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+
+<script>
+
+var list1 = [];
+class user {
+  constructor( fname,lname,uname,pwd) {
+this.fname=fname;
+this.lname=lname;
+this.uname=uname;
+this.pwd=pwd;
+  }
+}
+
+
+
+function myFunction(){
+
+  var fname=document.getElementById("fname").value;
+  var lname=document.getElementById("lname").value;
+  var uname=document.getElementById("username").value;
+  var pwd=document.getElementById("password").value;
+
+  test=new user(fname,lname,uname,pwd);
+console.log(test);
+ 
+list1.push(test);
+sessionStorage.setItem("list1" , JSON.stringify(list1));
+}
+
+
+function validate(){
+  
+var login_user=document.getElementById("new1").value;
+var pwd=document.getElementById("new2").value;
+var empObj = sessionStorage.getItem("list1");
+var list = JSON.parse(empObj);
+console.log(list);
+
+
+var bool=true;
+
+
+
+list.forEach(element => {
+
+
+if(element.uname==login_user && element.pwd==pwd){
+
+  alert("SUCCESS");
+ 
+  var divsToHide = document.getElementById("div4");
+  
+  divsToHide.style.visibility = "hidden";
+  divsToHide.style.display = "none";
+  
+  var divsToHide1 = document.getElementById("table");
+divsToHide1.style.display="block";
+var welcome = document.getElementById("name").innerHTML= "Welcome " +list1[0].fname;
+
+}
+
+else {
+  bool=false;
+
+  alert("Incorrect Username or Password");
+
+}
+
+
+});
+
+}
+
+function addtotable(){
+
+  var name=document.getElementById("con1").value;
+  var phone=document.getElementById("con2").value;
+
+  var newRow=document.getElementById('contacts').insertRow();
+  newRow.innerHTML = "<td> "+name+ "</td><td>"+phone+"</td>";
+  
+
+
+}
+
+</script>
+
+
+  <myTag></myTag>
+
+  
+</body>
+</html>
