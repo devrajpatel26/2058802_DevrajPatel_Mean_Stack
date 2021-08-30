@@ -1,0 +1,63 @@
+<script>
+    function myFunction(){
+
+        document.getElementById("alltasks").style.display="block";
+}
+    
+</script>
+
+
+
+
+<div>
+    <form [formGroup]="customerRef" (ngSubmit)="storeInfo()">
+        <label>Emp Id</label>
+        <input type="text" formControlName="id"/><br/>
+        <label>Task Id</label>
+        <input type="text" formControlName="cid"/><br/>
+        <label>Task</label>
+        <input type="text" formControlName="task"/><br/>
+        <label>Deadline</label>
+        <input type="text" formControlName="deadline"/><br/>
+        <input type="submit" value="Add Task"/>
+        <input type="reset" value="Reset"/>
+<br>
+    </form>
+
+    <button onclick="myFunction()">Show Tasks</button>
+        <br>
+
+
+        <div id="alltasks" style="display:none">
+ 
+    <br/>
+    <span style="color:red">{{storeMsg}}</span>
+    <hr/>
+    <table border="1">
+            <tr>
+                <th>Emp Id</th>
+                <th>Task Id</th>
+                <th>Task</th>
+                <th>Deadline</th>
+                <th>Delete</th>
+              
+            </tr>
+            <tr *ngFor="let customer of customers">
+                <td>{{customer.id}}</td>
+                <td>{{customer.cid}}</td>
+                <td>{{customer.task}}</td>
+                <td>{{customer.deadline}}</td>
+            
+               <td><input type="button" value="Delete" (click)="deleteRec(customer.cid)"/></td>
+             
+            </tr>
+    </table>
+    </div>
+    <br/>
+    <span style="color:red">{{deleteMsg}}</span>
+    <br/>
+    <hr/>
+    
+  
+
+</div>
