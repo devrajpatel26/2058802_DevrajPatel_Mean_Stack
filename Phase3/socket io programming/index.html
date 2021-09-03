@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- connecting library file part of node_module folder -->
+    <script src="http://localhost:9090/socket.io/socket.io.js"></script>
+    <script type="text/JavaScript">
+    var count=0;
+    var m1;
+        var socket = io("http://localhost:9090", {transports:['websocket']});
+        socket.emit("obj","Hello Server I am Web Socket Client");
+        socket.on("obj1",(msg)=> {
+            console.log(msg);
+
+            
+            //document.getElementById("t").innerHTML=msg;
+                })
+
+
+
+                function myFunction(){
+                    
+                    var name= document.getElementById('fname').value;
+                    socket.emit("t1",name,count);
+                    
+                    console.log(name);
+                    
+                  
+                    socket.on("test1",(msg)=> {
+                    console.log("DEV"+msg);
+                    document.getElementById("t").innerHTML+= "<br>"+name+ "<br>"+msg;
+                    msg="";
+                  })
+              
+            count++;
+                  socket.on("test2",(msg)=> {
+                    
+                    document.getElementById("t").innerHTML+= "<br>"+name+ "<br>"+msg;
+                  })
+
+
+                }
+
+
+              
+              
+    </script>
+</head>
+<body>
+
+    <h2>Socket.io Programming</h2>
+
+    <label for="fname">Name:</label><br>
+    <input type="text" id="fname" name="fname" ><br>
+    <label for="lname">Text:</label><br>
+    <input type="text" id   ="t1" name="t1" ><br><br>
+    <button onclick="myFunction()">Send</button>
+    <div id="t"></div>
+</body>
+</html>
